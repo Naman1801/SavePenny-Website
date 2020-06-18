@@ -1,0 +1,41 @@
+{% extends 'shop/basic.html' %}
+{% block contactactive %} active {% endblock contactactive %}
+
+{% block title %} SavePenny-Contact Us {% endblock %}
+
+{% block body %}
+<div class="container my-2">
+  <h3>Contact Us</h3>
+  <form action="/shop/contact/" method="POST"> {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="name" class="form-control" id="Name" name="name" required placeholder="Enter Your Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required placeholder="Enter Your Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Phone</label>
+      <input type="tel" class="form-control" id="tel" name="phone" required placeholder="Enter Your Phone number">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">How may we help you?</label>
+      <textarea class="form-control" id="desc" required name='desc' rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+  {% if thank %}
+  alert('Thanks for contacting us. We will get back to you soon');
+  document.location = "/shop/contact";
+  localStorage.clear();
+  {% endif %}
+</script>
+{% endblock %}

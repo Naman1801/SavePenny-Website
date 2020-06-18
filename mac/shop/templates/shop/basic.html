@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- social media icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- flaticon -->
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/2898/2898444.svg">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+    
+  <title>{% block title%} {% endblock %}</title>
+  
+    
+  <style>
+ 
+ @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+#social {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.smGlobalBtn { /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #000000;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+    border-color: #4060A5; /* change the border color on mouse hover */
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #000000;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+      
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+      border-color: #00ABE3;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #000000;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+      border-color: #e64522;
+}
+
+/* linkedin button class*/
+.linkedinBtn{
+    background: #000000;
+}
+
+.linkedinBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0e1"; /* add linkedin icon */
+}
+
+.linkedinBtn:hover{
+      color: #0094BC;
+      background: #fff;
+      border-color: #0094BC;
+}
+
+/* pinterest button class*/
+.pinterestBtn{
+    background: #cb2027;
+}
+
+.pinterestBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d2"; /* add pinterest icon */
+}
+
+.pinterestBtn:hover{
+      color: #cb2027;
+      background: #fff;
+      border-color: #cb2027;
+}
+
+/* tumblr button class*/
+.tumblrBtn{
+    background: #3a5876;
+}
+
+.tumblrBtn:before{
+      font-family: "FontAwesome";
+      content: "\f173"; /* add tumblr icon */
+}
+
+.tumblrBtn:hover{
+      color: #3a5876;
+      background: #fff;
+      border-color: #3a5876;
+}
+
+/* rss button class*/
+.rssBtn{
+    background: #e88845;
+}
+
+.rssBtn:before{
+      font-family: "FontAwesome";
+      content: "\f09e"; /* add rss icon */
+}
+
+.rssBtn:hover{
+      color: #e88845;
+      background: #fff;
+      border-color: #e88845;
+}
+
+
+
+
+  
+        {% block css %}
+
+
+
+      {% endblock %}
+  </style>
+</head>
+
+<body>
+  {% load static %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="{% static 'shop/logo1.png' %}" width="50" height="50" alt="">
+    <a class="navbar-brand" href="/shop">SavePenny.in</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item  {% block homeactive %} {% endblock homeactive %}">
+          <a class="nav-link" href="/shop">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item {% block aboutactive %} {% endblock aboutactive %}">
+          <a class="nav-link" href="/shop/about">About Us</a>
+        </li>
+
+        <li class="nav-item {% block trackeractive %} {% endblock trackeractive %}">
+          <a class="nav-link" href="/shop/tracker">Tracker</a>
+        </li>
+
+        <li class="nav-item {% block contactactive %} {% endblock contactactive %}">
+          <a class="nav-link" href="/shop/contact">Contact Us</a>
+        </li>
+
+
+      </ul>
+      <div class="ml-auto form-inline">
+      <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0">
+        <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Search"
+          aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover"
+        data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+
+
+        Cart(<span id="cart">0</span>)
+      </button>
+      {% if user.is_authenticated %}
+      <ul class="navbar-nav mr-2">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Welcome {{request.user}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/shop/logout">Logout</a>
+          </div>
+        </li>
+    </ul>
+      {% else %}
+      <button type="button" class="btn btn-success ml-2" data-toggle="modal" data-target="#loginModal">Login</button>
+      <button type="button" class="btn btn-success ml-2" data-toggle="modal" data-target="#signupModal">SignUp</button>
+      {% endif %}
+    </div>
+    </div>
+  </nav>
+  
+  {% for messgaes in messages %}
+  <div class="alert alert-{{messgaes.tags}} alert-dismissible fade show" role="alert">
+    <strong></strong> {{messgaes}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+
+<!-- login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="loginModalLabel">Login to SavePenny</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="/shop/login" method="post">{% csrf_token %}
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="loginusername"  name="loginusername" aria-describedby="emailHelp" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="loginpassword" name="loginpassword" required>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+       
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+  
+
+  <!-- signup Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">Get an SavePenny Account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="signup" method="post">{% csrf_token %}
+            <div class="form-group">
+              <label for="uname">Username</label>
+              <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter a unique User Name (Lowercase and alphanumeric)" required>
+              
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                placeholder="name@example.com" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="password1">Password</label>
+              <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+              <label for="password2">Confirm Password</label>
+              <input type="password" class="form-control" id="password1" name="password2"
+                placeholder="Enter your password again" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Create Account</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+  {% block body %} 
+  {% endblock %}
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-5 mx-auto">
+      
+        <div id="social">
+          <a class="facebookBtn smGlobalBtn" href="https://www.facebook.com/" ></a>
+          <a class="twitterBtn smGlobalBtn" href="https://twitter.com/login" ></a>
+          <a class="googleplusBtn smGlobalBtn" href="#" ></a>
+          <a class="linkedinBtn smGlobalBtn" href="https://in.linkedin.com/" ></a>  
+        </div>
+        <div class="container">
+        <p class="copyright text-muted">Copyright &copy; SavePenny.in 2020</p>
+        <p class="copyright text-muted">Made with ❤ by Naman</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  {% block js %} {% endblock %}
+</body>
+
+</html>
