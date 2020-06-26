@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+  <!-- facebook plugin -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0" nonce="6EXJdHPF"></script>
   <!-- social media icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- flaticon -->
@@ -176,7 +177,7 @@
 <body>
   {% load static %}
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="{% static 'shop/logo1.png' %}" width="50" height="50" alt="">
+    <img src="https://image.flaticon.com/icons/svg/2898/2898444.svg" width="50" height="50" alt="">
     <a class="navbar-brand" href="/shop">SavePenny.in</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -209,7 +210,7 @@
           aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover"
+      <button type="button" class="btn btn-success mx-2" id="popcart" data-container="body" data-toggle="popover"
         data-placement="bottom" data-html="true" data-content="Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus.">
 
@@ -260,7 +261,7 @@ aria-hidden="true">
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="loginusername"  name="loginusername" aria-describedby="emailHelp" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <small id="emailHelp" class="form-text text-muted"></small>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -306,7 +307,7 @@ aria-hidden="true">
               <label for="email">Email address</label>
               <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                 placeholder="name@example.com" required>
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="form-group">
               <label for="password1">Password</label>
@@ -314,7 +315,7 @@ aria-hidden="true">
             </div>
             <div class="form-group">
               <label for="password2">Confirm Password</label>
-              <input type="password" class="form-control" id="password1" name="password2"
+              <input type="password" class="form-control" id="password2" name="password2"
                 placeholder="Enter your password again" required>
             </div>
             
@@ -337,7 +338,7 @@ aria-hidden="true">
   {% endblock %}
 
 <!-- Footer -->
-<footer>
+<footer >
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-5 mx-auto">

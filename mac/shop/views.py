@@ -74,11 +74,12 @@ def contact(request):
 def tracker(request):
     if request.method=="POST":
         orderId = request.POST.get('orderId', '')
-        email = request.POST.get('email', '')
+        email = request.POST.get('trackeremail','')
         print(orderId)
         print(email)
         try:
             order = Order.objects.filter(order_id=orderId, email=email)
+            print(order)
             if len(order)>0:
                 update = OrderUpdate.objects.filter(order_id=orderId)
                 updates = []
